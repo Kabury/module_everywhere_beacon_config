@@ -1,0 +1,9 @@
+{
+  "name": "module_everywhere_beacon_config",
+  "version": "3.0.0",
+  "factorio_version": "2.0",
+  "title": "Modules everywhere and beacon settings (Configurable)",
+  "author": "original: sh4dow, Fork: mcmodderHD, ReFork: Kabury",
+  "description": "Allows all modules to be used everywhere, in all entities, beacons and recipes. Beacons will affect all machines",
+  "dependencies": ["base >= 2.0.0"]
+}
