@@ -44,39 +44,47 @@ data:extend({
 		order = "d2"
 	},
 	{
-		type = "bool-setting",
-		name = "moev-allow-asem",
+		type = "string-setting",
+		name = "moev-counter",
 		setting_type = "startup",
-		default_value = true,
+		allowed_values = {"total","same_type"},
+		default_value = "total",
 		order = "d3"
 	},
 	{
 		type = "bool-setting",
-		name = "moev-allow-silo",
+		name = "moev-allow-asem",
 		setting_type = "startup",
 		default_value = true,
 		order = "d4"
 	},
 	{
 		type = "bool-setting",
-		name = "moev-allow-furn",
+		name = "moev-allow-silo",
 		setting_type = "startup",
 		default_value = true,
 		order = "d5"
 	},
 	{
 		type = "bool-setting",
-		name = "moev-allow-lab",
+		name = "moev-allow-furn",
 		setting_type = "startup",
 		default_value = true,
 		order = "d6"
 	},
 	{
 		type = "bool-setting",
-		name = "moev-allow-dril",
+		name = "moev-allow-lab",
 		setting_type = "startup",
 		default_value = true,
 		order = "d7"
+	},
+	{
+		type = "bool-setting",
+		name = "moev-allow-dril",
+		setting_type = "startup",
+		default_value = true,
+		order = "d8"
 	},
 	{
         type = "double-setting",

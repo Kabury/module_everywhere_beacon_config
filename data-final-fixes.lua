@@ -86,6 +86,7 @@ for shorthand,mtype in pairs(machinetypes) do
       --Beacon profiles
       if mtype == "beacon" then
         entity.profile = moev_profile
+        entity.beacon_counter = settings.startup["moev-counter"].value
       end
     end
   end
