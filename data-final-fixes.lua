@@ -46,6 +46,9 @@ local machinetypes = {
 for shorthand,mtype in pairs(machinetypes) do
   if settings.startup["moev-allow-entity"].value and settings.startup["moev-allow-"..shorthand].value then
     for _,entity in pairs(data.raw[mtype]) do
+      if entity.name == "beacon-interface--beacon" then
+        goto skip_entity
+      end
       entity.allowed_effects = everywhere_effects
 
       --Don't disturb the surface property
@@ -88,6 +91,7 @@ for shorthand,mtype in pairs(machinetypes) do
         entity.profile = moev_profile
         entity.beacon_counter = settings.startup["moev-counter"].value
       end
+      ::skip_entity::
     end
   end
 end
