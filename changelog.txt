@@ -1,20 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.4
+Date: ????
+  Major Features:
+    - Implemented limits
+  Info:
+    - Version bump to 2.1
+---------------------------------------------------------------------------------------------------
 Version: 3.0.3
 Date: 2026-05-31
-  Bufixes:
+  Bugfixes:
     - scragar fixes for Beacon Interface
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.2
 Date: 2026-03-01
-  Minor:
+  Info:
     - Added some dependencies to ensure load order
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.1
 Date: 2026-03-01
-  Minor:
+  Minor Features:
     - Added the counter setting
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.0
 Date: 2026-02-29
-  Major:
+  Major Features:
     - Reworked some logic, forked from 2.0.9

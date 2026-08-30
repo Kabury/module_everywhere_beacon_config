@@ -1,9 +1,12 @@
+---@diagnostic disable: undefined-field
 -----Init
-everywhere_categories = {}
-moev_profile = {}
+local everywhere_categories = {}
+local moev_profile = {}
 local split_pattern = "[^%s,]+"
-local setting_cat_value = settings.startup["moev-allow-cat"].value
-local setting_profile_value = settings.startup["moev-profile"].value
+---@type string
+local setting_cat_value = settings.startup["moev-allow-cat"].value --[[@as string]]
+---@type string
+local setting_profile_value = settings.startup["moev-profile"].value --[[@as string]]
 
 for setpro in setting_profile_value:gmatch(split_pattern) do
   table.insert(moev_profile,tonumber(setpro))
@@ -40,26 +43,45 @@ local machinetypes = {
   silo = "rocket-silo",
   furn = "furnace",
   lab = "lab",
-  dril = "mining-drill"
+  dril = "mining-drill",
+  agri = "agricultural-tower"
 }
 
 for shorthand,mtype in pairs(machinetypes) do
   if settings.startup["moev-allow-entity"].value and settings.startup["moev-allow-"..shorthand].value then
     for _,entity in pairs(data.raw[mtype]) do
+
       if entity.name == "beacon-interface--beacon" then
         goto skip_entity
       end
       entity.allowed_effects = everywhere_effects
 
+      if entity.effect_receiver == nil then
+          entity.effect_receiver = {}
+      end
+      entity.effect_receiver.uses_module_effects=true
+      entity.effect_receiver.uses_beacon_effects=true
       --Don't disturb the surface property
       if settings.startup["moev-allow-surface"].value then
-        entity.effect_receiver = {uses_module_effects=true, uses_beacon_effects = true, uses_surface_effects = true}
-      else
-        if entity.effect_receiver == nil then
-          entity.effect_receiver = {}
-        end
-        entity.effect_receiver.uses_module_effects=true
-        entity.effect_receiver.uses_beacon_effects=true
+        entity.effect_receiver.uses_surface_effects = true
+      end
+
+      if settings.startup["moev-allow-limits"].value then
+        entity.effect_receiver.consumption_limits = 
+        {low=settings.startup["moev-l-con-low"].value,
+        high=settings.startup["moev-l-con-high"].value}
+        entity.effect_receiver.speed_limits = 
+        {low=settings.startup["moev-l-speed-low"].value,
+        high=settings.startup["moev-l-speed-high"].value}
+        entity.effect_receiver.productivity_limits = 
+        {low=settings.startup["moev-l-prod-low"].value,
+        high=settings.startup["moev-l-prod-high"].value}
+        entity.effect_receiver.pollution_limits = 
+        {low=settings.startup["moev-l-pol-low"].value,
+        high=settings.startup["moev-l-pol-high"].value}
+        entity.effect_receiver.quality_limits = 
+        {low=settings.startup["moev-l-qual-low"].value,
+        high=settings.startup["moev-l-qual-high"].value}
       end
 
       --Get already there
@@ -114,7 +136,7 @@ end
 if settings.startup["moev-maximum-productivity"].value ~= 0 then
   for _, recipe in pairs(data.raw.recipe) do
     if recipe.allow_productivity == true then
-      recipe.maximum_productivity = settings.startup["moev-maximum-productivity"].value
+      recipe.maximum_productivity = settings.startup["moev-maximum-productivity"].value --[[@as double]]
     end
   end
 end

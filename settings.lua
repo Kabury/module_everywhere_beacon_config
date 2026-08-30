@@ -87,20 +87,124 @@ data:extend({
 		order = "d8"
 	},
 	{
-        type = "double-setting",
-        name = "moev-maximum-productivity",
-        setting_type = "startup",
-        minimum_value = 0.0,
-        default_value = 0.0,
-		maximum_value = 100.0,
-        order = "e"
+		type = "bool-setting",
+		name = "moev-allow-agri",
+		setting_type = "startup",
+		default_value = true,
+		order = "d8"
+	},
+	{
+    type = "double-setting",
+    name = "moev-maximum-productivity",
+    setting_type = "startup",
+    minimum_value = 0.0,
+    default_value = 0.0,
+    maximum_value = 100.0,
+    order = "e"
+	},
+	{
+		type = "bool-setting",
+		name = "moev-allow-limits",
+		setting_type = "startup",
+		default_value = true,
+		order = "f"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-con-low",
+    setting_type = "startup",
+    minimum_value = -0.9999,
+    default_value = -0.9999,
+    maximum_value = 1000.0000,
+    order = "g0"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-con-high",
+    setting_type = "startup",
+    minimum_value = -1000.0000,
+    default_value = 1000.0000,
+    maximum_value = 1000.0000,
+    order = "g1"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-speed-low",
+    setting_type = "startup",
+    minimum_value = -0.9999,
+    default_value = -0.9999,
+    maximum_value = 1000.0000,
+    order = "g2"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-speed-high",
+    setting_type = "startup",
+    minimum_value = -1000.0000,
+    default_value = 1000.0000,
+    maximum_value = 1000.0000,
+    order = "g3"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-prod-low",
+    setting_type = "startup",
+    minimum_value = -0.9999,
+    default_value = -0.9999,
+    maximum_value = 1000.0000,
+    order = "g4"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-prod-high",
+    setting_type = "startup",
+    minimum_value = -1000.0000,
+    default_value = 1000.0000,
+    maximum_value = 1000.0000,
+    order = "g5"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-pol-low",
+    setting_type = "startup",
+    minimum_value = -0.9999,
+    default_value = -0.9999,
+    maximum_value = 1000.0000,
+    order = "g6"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-pol-high",
+    setting_type = "startup",
+    minimum_value = -1000.0000,
+    default_value = 1000.0000,
+    maximum_value = 1000.0000,
+    order = "g7"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-qual-low",
+    setting_type = "startup",
+    minimum_value = -0.9999,
+    default_value = -0.9999,
+    maximum_value = 1000.0000,
+    order = "g8"
+	},
+	{
+    type = "double-setting",
+    name = "moev-l-qual-high",
+    setting_type = "startup",
+    minimum_value = -1000.0000,
+    default_value = 1000.0000,
+    maximum_value = 1000.0000,
+    order = "g9"
 	},
 	{
 		type = "bool-setting",
 		name = "moev-allow-surface",
 		setting_type = "startup",
 		default_value = true,
-		order = "f"
+		order = "h"
 	},
 	{
 		type = "int-setting",
@@ -109,6 +213,6 @@ data:extend({
 		default_value = 0,
 		minimum_value = 0,
 		maximum_value = 64,
-		order = "g"
+		order = "i"
 	}
 })
