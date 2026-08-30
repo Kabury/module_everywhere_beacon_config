@@ -8,7 +8,7 @@
     "? rainbow_beacons"
   ],
   "name": "module_everywhere_beacon_config",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "title": "Modules everywhere and beacon settings (Configurable)",
   "author": "original: sh4dow, Fork: mcmodderHD, ReFork: Kabury",
   "description": "Allows all modules to be used everywhere, in all entities, beacons and recipes. Beacons will affect all machines"
